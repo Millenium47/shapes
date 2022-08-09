@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BoxList from "./components/BoxList";
+import ShowModal from "./components/ShowModal";
 
 function App() {
 
@@ -21,6 +22,12 @@ function App() {
 
   const [solution, setSolution] = useState([]);
   const [guess, setGuess] = useState([]);
+  const [openShowModal, isOpenShowModal] = useState(false);
+
+  useEffect(() => {
+    setSolution(shapes);
+    setGuess(defaultShapes);
+  }, [])
 
   const updateGuess = (id, newShape, newColor) => {
     const newGuess = guess.map(prev => {
@@ -33,15 +40,13 @@ function App() {
     setGuess(newGuess);
   }
 
-  const start = () => {
-    setSolution(shapes);
-    setGuess(defaultShapes);
-  }
-
   return (
     <div className="container">
-      <button onClick={start}>Start</button>
+      {!openShowModal && <button onClick={() => { isOpenShowModal(true) }}>Start</button>}
+      {openShowModal && <ShowModal solution={solution} isOpenShowModal={isOpenShowModal} />}
+
       <BoxList guess={guess} updateGuess={updateGuess} />
+      <button>Submit</button>
     </div>
   );
 }
