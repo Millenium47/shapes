@@ -1,11 +1,14 @@
 import './ShowModal.css';
-import ShapeBox from './ShapeBox';
+import { useNavigate } from "react-router-dom";
 
 const ShowModal = ({ solution, isOpenShowModal }) => {
+    let navigate = useNavigate();
+
     const closeModal = () => {
         setTimeout(function () {
             isOpenShowModal(false);
-        }, 3000);
+            navigate('/guess');
+        }, 5000);
     }
 
     const showBoxes = ({ id, color, shape }) => {

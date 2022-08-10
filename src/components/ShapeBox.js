@@ -25,15 +25,4 @@ function ShapeBox({ id, shape, color, updateGuess }) {
     );
 }
 
-{/* 
-https://icons.getbootstrap.com/
-bi bi-square
-bi bi-circle
-bi bi-triangle
-bi bi-star
-bi bi-pentagon
-bi bi-hexagon
-
-
-*/}
 export default ShapeBox;
