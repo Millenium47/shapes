@@ -5,16 +5,16 @@ const ShowModal = ({ solution, isOpenShowModal }) => {
     let navigate = useNavigate();
 
     const closeModal = () => {
-        setTimeout(function () {
-            isOpenShowModal(false);
-            navigate('/guess');
-        }, 5000);
+        // setTimeout(function () {
+        //     isOpenShowModal(false);
+        //     navigate('/guess');
+        // }, 1000);
     }
 
     const showBoxes = ({ id, color, shape }) => {
         return (
-            <div key={id} className={'card ' + color} >
-                <i className={'bi-' + shape} />
+            <div key={id} className={'card ' + color} style={{ padding: '2rem' }}>
+                <p className={'bi-' + shape} style={{ fontSize: '4rem' }} />
             </div>
         );
     }
@@ -22,7 +22,9 @@ const ShowModal = ({ solution, isOpenShowModal }) => {
     return (
         <div className="modalBackground">
             <div className="modalContainer">
-                {solution.map(box => showBoxes(box))}
+                <div className='d-grid gap-2 d-sm-flex justify-content-sm-center'>
+                    {solution.map(box => showBoxes(box))}
+                </div>
                 {closeModal()}
             </div>
         </div>

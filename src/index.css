@@ -12,22 +12,38 @@ code {
     monospace;
 }
 
-.red {
+.bg-custom-blue {
+  background-color: #569ACB;
+}
+
+.container-fluid {
+  height: 100vh;
+}
+
+.btn-xl {
+  word-wrap:break-word;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  border-radius: 10px;
+}
+
+.card-red {
   background-color: #FFCCCB;
 }
 
-.blue {
+.card-blue {
   background-color: #add8e6
 }
 
-.black {
+.card-black {
   background-color: #D3D3D3;
 }
 
-.yellow {
+.card-yellow {
   background-color: #FFFF99;
 }
 
-.green {
+.card-green {
   background-color: #90ee90;
 }

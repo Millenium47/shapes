@@ -10,7 +10,7 @@ function Result({ evaluate }) {
     return (
         <>
             <p>{result ? 'you win' : 'you lose'}</p>
-            <button onClick={playAgain}>Play again</button>
+            <button className='btn btn-primary' onClick={playAgain}>Play again</button>
         </>
     );
 }

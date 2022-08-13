@@ -3,6 +3,7 @@ import { BrowserRouter, MemoryRouter, Route, Routes, } from "react-router-dom";
 import BoxList from "./components/BoxList";
 import ShowModal from "./components/ShowModal";
 import Result from "./components/Result";
+import Menu from "./components/Menu";
 
 function App() {
 
@@ -53,7 +54,9 @@ function App() {
   }
 
   const start = () => {
-    return !openShowModal ? <button onClick={() => { isOpenShowModal(true) }}>Start</button> : <ShowModal solution={solution} isOpenShowModal={isOpenShowModal} />
+    return !openShowModal ?
+      <Menu isOpenShowModal={isOpenShowModal} /> :
+      <ShowModal solution={solution} isOpenShowModal={isOpenShowModal} />
   }
 
   return (

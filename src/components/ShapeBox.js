@@ -19,8 +19,10 @@ function ShapeBox({ id, shape, color, updateGuess }) {
     }
 
     return (
-        <div key={id} className={'card ' + color} onClick={updateGuessColor} >
-            <i onClick={updateGuessShape} className={'bi-' + shape} />
+        <div className='col'>
+            <div key={id} className={'p-5 card card-' + color} onClick={updateGuessColor} >
+                <p onClick={updateGuessShape} className={'display-1 bi-' + shape} />
+            </div>
         </div>
     );
 }
