@@ -1,5 +1,3 @@
-import './ShapeBox.css';
-
 function ShapeBox({ id, shape, color, updateGuess }) {
 
     const possibleShapes = ['square', 'circle', 'triangle', 'star', 'pentagon', 'hexagon'];
@@ -20,7 +18,7 @@ function ShapeBox({ id, shape, color, updateGuess }) {
 
     return (
         <div className='col-md-2 col-sm-7'>
-            <div key={id} className={'py-5 px-4 card-' + color} onClick={updateGuessColor} >
+            <div key={id} className={'border border-dark rounded py-5 px-4 card-' + color} onClick={updateGuessColor} >
                 <p onClick={updateGuessShape} className={'display-1 bi-' + shape} />
             </div>
         </div>

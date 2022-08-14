@@ -1,31 +1,46 @@
-import './ShowModal.css';
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Modal from 'bootstrap/js/dist/modal';
 
-const ShowModal = ({ solution, isOpenShowModal }) => {
+const ShowModal = ({ solution }) => {
     let navigate = useNavigate();
 
-    const closeModal = () => {
+    useEffect(() => {
+        getModal().show();
         setTimeout(function () {
-            isOpenShowModal(false);
+            getModal().hide();
             navigate('/guess');
-        }, 1000);
+        }, 5000);
+    }, []);
+
+    const getModal = () => {
+        var myModal = document.getElementById('exampleModal');
+        var modal = Modal.getInstance(myModal) || new Modal(myModal);
+        return modal;
     }
 
     const showBoxes = ({ id, color, shape }) => {
         return (
-            <div key={id} className={'card ' + color} style={{ padding: '2rem' }}>
-                <p className={'bi-' + shape} style={{ fontSize: '4rem' }} />
-            </div>
+            <div className='col-md-2 col-sm-10'>
+                <div key={id} className={'border border-dark rounded py-5 card-' + color}>
+                    <p className={'display-1 bi-' + shape} />
+                </div>
+            </div >
         );
     }
 
     return (
-        <div className="modalBackground">
-            <div className="modalContainer">
-                <div className='d-grid gap-2 d-sm-flex justify-content-sm-center'>
-                    {solution.map(box => showBoxes(box))}
+        <div className="modal bg-custom-blue" id="exampleModal" tabIndex="-1" data-bs-backdrop="static">
+            <div className="modal-dialog modal-xl modal-dialog-centered">
+                <div className="modal-content">
+                    <div className="modal-body">
+                        <div className="text-center container">
+                            <div className="row justify-content-center" styles={{ margin: '-50px' }}>
+                                {solution.map(box => showBoxes(box))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {closeModal()}
             </div>
         </div>
     );
