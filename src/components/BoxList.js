@@ -9,15 +9,12 @@ function BoxList({ guess, updateGuess }) {
     }
 
     return (
-        <div className='px-4 py-5 text-center container-fluid bg-custom-blue'>
-            <div className="row mx-5 ">
-                <div className='d-grid gap-4 d-sm-flex justify-content-sm-center'>
-                    {guess.map(box => <ShapeBox id={box.id} color={box.color} shape={box.shape} updateGuess={updateGuess} />)}
-                </div>
+        <div className='py-5 text-center container-fluid bg-custom-blue'>
+            <div className='py-5 row justify-content-center'>
+                {guess.map(box => <ShapeBox id={box.id} color={box.color} shape={box.shape} updateGuess={updateGuess} />)}
             </div>
-            <div className='row'>
-                <div className='col-5' />
-                <button className='col-2 mt-4 btn-lg btn btn-primary' onClick={showResult}>Submit</button>
+            <div className='row justify-content-center'>
+                <button className='col-md-2 col-sm-4 mt-4 btn-lg btn btn-primary' onClick={showResult}>Submit</button>
             </div>
         </div>
     );

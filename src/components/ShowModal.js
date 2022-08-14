@@ -5,10 +5,10 @@ const ShowModal = ({ solution, isOpenShowModal }) => {
     let navigate = useNavigate();
 
     const closeModal = () => {
-        // setTimeout(function () {
-        //     isOpenShowModal(false);
-        //     navigate('/guess');
-        // }, 1000);
+        setTimeout(function () {
+            isOpenShowModal(false);
+            navigate('/guess');
+        }, 1000);
     }
 
     const showBoxes = ({ id, color, shape }) => {
