@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, MemoryRouter, Route, Routes, } from "react-router-dom";
+import { MemoryRouter, Route, Routes, } from "react-router-dom";
 import BoxList from "./components/BoxList";
 import ShowModal from "./components/ShowModal";
 import Result from "./components/Result";
@@ -60,13 +60,13 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <MemoryRouter>
       <Routes>
         <Route path="*" element={start()} />
         <Route path="/guess" element={<BoxList guess={guess} updateGuess={updateGuess} />} />
         <Route path="/results" element={<Result evaluate={evaluate} isOpenShowModal={isOpenShowModal} />} />
       </Routes>
-    </BrowserRouter>
+    </MemoryRouter>
   );
 }
 
