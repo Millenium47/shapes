@@ -26,6 +26,7 @@ function App() {
   const [solution, setSolution] = useState([]);
   const [guess, setGuess] = useState([]);
   const [openShowModal, isOpenShowModal] = useState(false);
+  const [timer, setTimer] = useState(10)
 
   useEffect(() => {
     setSolution(shapes);
@@ -35,7 +36,6 @@ function App() {
   const updateGuess = (id, newShape, newColor) => {
     const newGuess = guess.map(prev => {
       if (prev.id === id) {
-        console.log('prev.id ', { ...prev, shape: newShape, color: newColor });
         return { ...prev, shape: newShape, color: newColor };
       }
       return prev;
@@ -55,8 +55,8 @@ function App() {
 
   const start = () => {
     return !openShowModal ?
-      <Menu isOpenShowModal={isOpenShowModal} /> :
-      <ShowModal solution={solution} isOpenShowModal={isOpenShowModal} />
+      <Menu isOpenShowModal={isOpenShowModal} setTimer={setTimer} /> :
+      <ShowModal timer={timer} solution={solution} isOpenShowModal={isOpenShowModal} />
   }
 
   return (
@@ -64,7 +64,7 @@ function App() {
       <Routes>
         <Route path="*" element={start()} />
         <Route path="/guess" element={<BoxList guess={guess} updateGuess={updateGuess} />} />
-        <Route path="/results" element={<Result evaluate={evaluate} />} />
+        <Route path="/results" element={<Result evaluate={evaluate} isOpenShowModal={isOpenShowModal} />} />
       </Routes>
     </BrowserRouter>
   );

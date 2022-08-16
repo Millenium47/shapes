@@ -2,15 +2,16 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from 'bootstrap/js/dist/modal';
 
-const ShowModal = ({ solution }) => {
+const ShowModal = ({ solution, timer }) => {
     let navigate = useNavigate();
 
     useEffect(() => {
-        getModal().show();
+        var modal = getModal();
+        modal.show();
         setTimeout(function () {
-            getModal().hide();
+            modal.hide();
             navigate('/guess');
-        }, 5000);
+        }, timer * 1000);
     }, []);
 
     const getModal = () => {
@@ -21,8 +22,8 @@ const ShowModal = ({ solution }) => {
 
     const showBoxes = ({ id, color, shape }) => {
         return (
-            <div className='col-md-2 col-sm-10'>
-                <div key={id} className={'border border-dark rounded py-5 card-' + color}>
+            <div key={id} className='col-md-2 col-sm-10'>
+                <div className={'border border-dark rounded py-5 card-' + color}>
                     <p className={'display-1 bi-' + shape} />
                 </div>
             </div >
