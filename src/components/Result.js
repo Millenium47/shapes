@@ -14,7 +14,7 @@ function Result({ evaluate, isOpenShowModal }) {
     }
 
     return (
-        <div className="px-4 py-5 text-center bg-custom-blue container-fluid">
+        <div className="px-4 py-5 text-center bg-custom-blue container-fluid min-vh-100">
             <div className="col-lg-6 mx-auto my-5">
                 <h1 className="display-5 fw-bold">{result ? 'Congratulations, you win!' : 'You lose, try again!'}</h1>
             </div>

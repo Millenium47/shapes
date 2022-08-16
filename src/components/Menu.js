@@ -3,8 +3,8 @@ import animation from '../assets/1aoi.gif';
 function Menu({ isOpenShowModal, setTimer }) {
 
     return (
-        <div className="px-4 py-5 text-center bg-custom-blue container-fluid">
-            <img className='d-block mx-auto mb-4' src={animation} alt='gif' />
+        <div className="px-4 py-5 text-center bg-custom-blue container-fluid min-vh-100">
+            <img className='d-block img-fluid mx-auto mb-4' src={animation} alt='gif' />
             <h1 className="display-5 fw-bold">Shape memory game</h1>
             <div className="col-lg-6 mx-auto">
                 <p className="lead mb-4">After pressing start shapes with background color are shown for 10 seconds, then you have to repeat them and press submit.

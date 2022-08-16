@@ -1,6 +1,6 @@
 function ShapeBox({ id, shape, color, updateGuess }) {
 
-    const possibleShapes = ['square', 'circle', 'triangle', 'star', 'pentagon', 'hexagon'];
+    const possibleShapes = ['square', 'circle', 'triangle', 'diamond', 'pentagon', 'hexagon'];
     const possibleColors = ['black', 'red', 'blue', 'green', 'yellow'];
 
     const updateGuessShape = (e) => {
