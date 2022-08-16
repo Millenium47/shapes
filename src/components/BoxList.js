@@ -9,7 +9,7 @@ function BoxList({ guess, updateGuess }) {
     }
 
     return (
-        <div className='py-5 text-center container-fluid bg-custom-blue'>
+        <div className='py-5 text-center container-fluid bg-custom-blue min-vh-100'>
             <div className='py-5 row justify-content-center'>
                 {guess.map(box => <ShapeBox key={box.id} id={box.id} color={box.color} shape={box.shape} updateGuess={updateGuess} />)}
             </div>

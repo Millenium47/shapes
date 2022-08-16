@@ -8,11 +8,11 @@ import Menu from "./components/Menu";
 function App() {
 
   const shapes = [
-    { id: 10, shape: 'triangle', color: 'red' },
-    { id: 20, shape: 'circle', color: 'green' },
-    { id: 30, shape: 'diamond', color: 'blue' },
-    { id: 40, shape: 'hexagon', color: 'black' },
-    { id: 50, shape: 'triangle', color: 'yellow' }
+    { id: 6, shape: 'triangle', color: 'red' },
+    { id: 7, shape: 'circle', color: 'green' },
+    { id: 8, shape: 'diamond', color: 'blue' },
+    { id: 9, shape: 'hexagon', color: 'black' },
+    { id: 10, shape: 'triangle', color: 'yellow' }
   ]
 
   const defaultShapes = [

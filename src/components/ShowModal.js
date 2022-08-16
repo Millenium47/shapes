@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from 'bootstrap/js/dist/modal';
-import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 const ShowModal = ({ solution, timer }) => {
     let navigate = useNavigate();
