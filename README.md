@@ -2,6 +2,5 @@ Small memory game where you are shown 5 cards with one of five background colors
 
 Goal of this project was to learn React and basics Bootstrap 5.
 
-
-![Animation](https://user-images.githubusercontent.com/17088629/184879803-273e17b3-5f01-4207-96c6-466004b44570.gif)
+![Shapes](https://user-images.githubusercontent.com/17088629/184880940-1d52e196-0f33-42c8-867e-193e37edaf45.gif)
 
