@@ -2,7 +2,6 @@ import animation from '../assets/1aoi.gif';
 
 function Menu({ isOpenShowModal, setTimer }) {
 
-
     return (
         <div className="px-4 py-5 text-center bg-custom-blue container-fluid">
             <img className='d-block mx-auto mb-4' src={animation} alt='gif' />

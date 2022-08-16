@@ -1,14 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from 'bootstrap/js/dist/modal';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 const ShowModal = ({ solution, timer }) => {
     let navigate = useNavigate();
 
+    const [timeLeft, setTimeLeft] = useState(timer);
+
+    useEffect(() => {
+        if (timeLeft > 0)
+            setTimeout(() => { setTimeLeft(timeLeft - 1) }, 950)
+    }, [timeLeft]);
+
     useEffect(() => {
         var modal = getModal();
         modal.show();
-        setTimeout(function () {
+
+        setTimeout(() => {
             modal.hide();
             navigate('/guess');
         }, timer * 1000);
@@ -33,6 +42,9 @@ const ShowModal = ({ solution, timer }) => {
     return (
         <div className="modal bg-custom-blue" id="exampleModal" tabIndex="-1" data-bs-backdrop="static">
             <div className="modal-dialog modal-xl modal-dialog-centered">
+                <div className="position-absolute top-0 start-50 translate-middle-x">
+                    <p className="display-1 fw-bold">{timeLeft}</p>
+                </div>
                 <div className="modal-content">
                     <div className="modal-body">
                         <div className="text-center container">
@@ -43,7 +55,7 @@ const ShowModal = ({ solution, timer }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
